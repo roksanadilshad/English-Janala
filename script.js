@@ -10,15 +10,40 @@ const lessonCardContainer = (id) => {
     .then(res => res.json())
     .then(json => displayLevelWord(json.data))
     
+
 }
+// "id": 4,
+// "level": 5,
+// "word": "Diligent",
+// "meaning": "পরিশ্রমী",
+// "pronunciation": "ডিলিজেন্ট"
 const displayLevelWord = (words) => {
    const wordContainer = document.getElementById('word-container');
-   //wordContainer.innerHTML = "";
+   wordContainer.innerHTML = "";
 
    words.forEach(word => {
     
     const wordCard = document.createElement('div');
-    wordCard.innerHTML = `
+    //
+     wordCard.innerHTML = `     
+      <div class="bg-white text-center py-10 px-5 rounded-[12px]">
+          
+          <h2 class="text-2xl font-bold pb-4">
+            ${word.word}
+          </h2>
+          <p class="text-xl font-medium text-[#18181B] pb-4">
+            Meaning /Pronounciation
+          </p>
+          <div class="bangla text-xl font-medium text-[#18181B] pb-10">           
+              "${word.meaning} / ${word.pronunciation}"
+          </div>
+
+          <div class="flex justify-between pt-5">
+            <!-- icons -->
+             <i class="transition-[.5s] ri-information-fill px-2.5 py-2 text-[#374957] text-xl bg-[#1a90ff3f] rounded-lg hover:text-[#000000] hover:bg-[#1a90ff9a]"></i>
+             <i class="transition-[.5s] ri-volume-down-fill px-2.5 py-2 text-[#374957] text-xl bg-[#1a90ff3f] rounded-lg hover:text-[#000000] hover:bg-[#1a90ff9a]"></i>
+          </div>
+        </div>
     
     `;
 
