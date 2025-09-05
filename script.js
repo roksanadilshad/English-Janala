@@ -1,3 +1,21 @@
+const creatElement = (arr) => {
+  const htmlElements = arr.map(el => `<span class ="btn">${el}</span>`);
+  return htmlElements.join(" ");
+};
+
+const manageSpinner = (status) => {
+  if(status === true){
+    document.getElementById('spinner').classList.remove("hidden");
+    document.getElementById('word-container').classList.add("hidden");
+  }
+  else{
+    document.getElementById('word-container').classList.remove("hidden");
+    document.getElementById('spinner').classList.add("hidden");
+  }
+}
+
+
+
 const loadLesson = () => {
     fetch('https://openapi.programming-hero.com/api/levels/all')
     .then(res => res.json())
@@ -13,6 +31,7 @@ const lessonsBtns =  document.querySelectorAll('.lesson-btn');
 
 
 const lessonCardContainer = (id) => {
+  manageSpinner(true);
     const url = `https://openapi.programming-hero.com/api/level/${id}`
     fetch(url)
     .then(res => res.json())
@@ -72,11 +91,7 @@ const displayWordDetails = (word) => {
           সমার্থক শব্দ গুলো
         </p>
         <div class="flex justify-start items-center gap-3 ">
-
-          <p class="bg-[#edf7ff75] text-[16px] font-medium text-[#79716B] rounded-lg p-5">${word.synonyms[0]}</p>
-          <p class="bg-[#edf7ff75] text-[16px] font-medium text-[#79716B] rounded-lg p-5">${word.synonyms[1]}</p>
-          <p class="bg-[#edf7ff75] text-[16px] font-medium text-[#79716B] rounded-lg p-5">${word.synonyms[2]}</p>
-           
+                       ${creatElement(word.synonyms)};          
         </div>
       </div>
     <button class="btn btn-soft btn-primary botrder-[1px] border-[#422AD5] mt-6">Complete Learning</button>
@@ -104,7 +119,9 @@ const displayLevelWord = (words) => {
           নেক্সট Lesson এ যান
           </h2>
         </div>
-    `
+    `;
+    manageSpinner(false);
+    return;
    }
 
    words.forEach(word => {
@@ -139,8 +156,11 @@ const displayLevelWord = (words) => {
     `;
 
     wordContainer.append(wordCard)
-   })
-}
+   });
+   
+   manageSpinner(false);
+};
+
 const displayLesson = (lessons) => {
     
 //1. get the container empty
