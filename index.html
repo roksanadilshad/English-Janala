@@ -64,14 +64,14 @@
                  <h1 class="text-4xl font-bold pb-6"><span class="text-[#00BCFF]">English</span> is Easy !!</h1>
                  <p class="bangla text-2xl font-medium text-[#18181B] lg:w-10/12 pb-6">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ</p>
 
-                <fieldset class="fieldset ">
+                
                 <div>
                     <input type="text" class="input mb-5" placeholder="Enter Your Name" />
                 </div>
                  <div>                
                      <input type="text" class="input mb-5" placeholder="........." />
                 </div>
-                </fieldset>
+                
                 <a href="" class="btn btn-soft btn-primary botrder-[1px] border-[#422AD5] bg-[#422AD5] text-[#E0E7FF]">Get Started </a>
             </div>
 
@@ -89,7 +89,17 @@
         <div id="lesson-container" class="flex justify-center items-center gap-3 flex-wrap"></div>
       </div>
 
-      <div id="spinner" class=" flex justify-center items-center py-10 hidden">
+      <div class="join flex justify-center">
+  <div>
+    <label class="input validator join-item">
+      <input id="input-search" type="email" placeholder="Search Vocabulary Now" required />
+    </label>
+   
+  </div>
+  <button id="btn-search" class="btn btn-soft btn-primary bg-[#422AD5] text-white border-[#422AD5]">Search</button>
+</div>
+
+      <div id="spinner" class="flex justify-center items-center py-10 hidden">
 
         <span class="loading loading-bars loading-xl"></span>
       </div>
