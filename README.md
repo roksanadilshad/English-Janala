@@ -51,12 +51,14 @@ Follow these steps to run the project locally:
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/your-username/learning-english-app.git
+git clone https://github.com/roksanadilshad/English-Janala.git
+
+### 🌐 Live Link
+- Live Website:
+-GitHub Repository: https://github.com/roksanadilshad/English-Janala.git
 
 
----
-
-## ⚡ API Endpoints
+### ⚡ API Endpoints
 
 1. Get ⚡ All Levels
 
