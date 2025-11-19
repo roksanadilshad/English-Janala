@@ -54,7 +54,7 @@ Follow these steps to run the project locally:
 git clone https://github.com/roksanadilshad/English-Janala.git
 
 ### 🌐 Live Link
-- Live Website:
+- Live Website: https://roksanadilshad.github.io/English-Janala/
 -GitHub Repository: https://github.com/roksanadilshad/English-Janala.git
 
 
